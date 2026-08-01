@@ -59,7 +59,7 @@ every turn, which is the failure mode it exists to prevent.
 
 ```bash
 git clone https://github.com/OpenCnid/spark-steering.git
-cp -r spark-steering ~/.claude/skills/spark-steering
+cp -r spark-steering/.claude/skills/spark-steering ~/.claude/skills/
 ```
 
 Or install it with the rest of the stack:
