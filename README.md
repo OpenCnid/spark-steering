@@ -59,8 +59,31 @@ every turn, which is the failure mode it exists to prevent.
 
 ```bash
 git clone https://github.com/OpenCnid/spark-steering.git
+mkdir -p ~/.claude/skills
 cp -r spark-steering/.claude/skills/spark-steering ~/.claude/skills/
 ```
+
+> **The `mkdir -p` is load-bearing — do not drop it as noise.** If
+> `~/.claude/skills/` does not exist yet, which is the state of anyone who has
+> never installed a skill, `cp` reads the trailing path as a rename target and
+> writes `~/.claude/skills/SKILL.md` with no skill directory at all. Exit code
+> 0, no output, no error. The skill never loads and nothing says why — and
+> because this one is manual-invoke only, you never see it fail to fire. You
+> just find the slash command missing.
+
+On PowerShell:
+
+```powershell
+git clone https://github.com/OpenCnid/spark-steering.git
+New-Item -ItemType Directory -Force ~/.claude/skills
+Copy-Item -Recurse -Force spark-steering/.claude/skills/spark-steering ~/.claude/skills/
+```
+
+`-Force` on the copy is what makes a re-run an upgrade instead of an "item with
+the specified name already exists" failure.
+
+If `CLAUDE_CONFIG_DIR` is set it replaces `~/.claude` as the skills root, so
+install into `$CLAUDE_CONFIG_DIR/skills` instead.
 
 Or install it with the rest of the stack:
 [OpenCnid/dovetail](https://github.com/OpenCnid/dovetail).
