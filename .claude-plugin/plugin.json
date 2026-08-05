@@ -1,0 +1,12 @@
+{
+  "name": "spark-steering",
+  "description": "Diagnose which SPARK axis (Skills, Personalities, Approaches, Resources, Knowledge) is actually short before reaching for a fix, and move only that one.",
+  "version": "0.1.0",
+  "author": {
+    "name": "OpenCnid Labs",
+    "url": "https://github.com/OpenCnid"
+  },
+  "homepage": "https://github.com/OpenCnid/spark-steering",
+  "repository": "https://github.com/OpenCnid/spark-steering",
+  "license": "CC-BY-4.0"
+}
