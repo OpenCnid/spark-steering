@@ -60,7 +60,7 @@ every turn, which is the failure mode it exists to prevent.
 ```bash
 git clone https://github.com/OpenCnid/spark-steering.git
 mkdir -p ~/.claude/skills
-cp -r spark-steering/.claude/skills/spark-steering ~/.claude/skills/
+cp -r spark-steering/skills/spark-steering ~/.claude/skills/
 ```
 
 > **The `mkdir -p` is load-bearing — do not drop it as noise.** If
@@ -76,7 +76,7 @@ On PowerShell:
 ```powershell
 git clone https://github.com/OpenCnid/spark-steering.git
 New-Item -ItemType Directory -Force ~/.claude/skills
-Copy-Item -Recurse -Force spark-steering/.claude/skills/spark-steering ~/.claude/skills/
+Copy-Item -Recurse -Force spark-steering/skills/spark-steering ~/.claude/skills/
 ```
 
 `-Force` on the copy is what makes a re-run an upgrade instead of an "item with
